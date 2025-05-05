@@ -189,9 +189,8 @@ chmod +x ~/askpass.sh
 <img width="521" alt="image" src="https://github.com/user-attachments/assets/9693ef72-9d92-47f0-8691-e7f7f4b52fba" /><br>
 
 8. Checking commits to do the latest deployment on the server:<br>
-<img width="689" alt="image" src="https://github.com/user-attachments/assets/344119db-9bbb-4c35-baee-8d9b061572db" /><br>
-
-
+<img width="682" alt="image" src="https://github.com/user-attachments/assets/085e0134-67ec-4c55-8c41-49d2a9d398c6" /><br>
+![image](https://github.com/user-attachments/assets/c65388cb-a74d-4026-bb16-5f2bd78e42c7)<br>
 ---
 
 ## 📄 License
