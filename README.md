@@ -77,12 +77,12 @@ pipx ensurepath
 
 ### On Windows:
 1. Install dotenv:
-   ```python
+   ```bash
    pip install python-dotenv
    ```
 2. Create a `.env` file and add your GitHub token:
-   ```
-   GITHUB_TOKEN="your_github_token"
+   ```python
+   GITHUB_TOKEN = "your_github_token"
    ```
 3. Ensure `.env` is listed in `.gitignore`.
 ---
