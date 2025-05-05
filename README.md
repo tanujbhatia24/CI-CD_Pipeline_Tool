@@ -95,13 +95,13 @@ pipx ensurepath
 sudo nano /etc/nginx/sites-available/default
 ```
 
-Set the root to:
+2. Set the root to:
 
 ```nginx
 root /home/<your_username>/Devops_CICD/CI-CD_Pipeline_Tool/;
 ```
 
-2. Restart nginx:
+3. Restart nginx:
 
 ```bash
 sudo systemctl restart nginx
@@ -116,26 +116,26 @@ echo "$(whoami) ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx" | sudo tee /et
 
 ## Cron Job Setup (Every 5 Minutes)
 
-Edit crontab:
+1. Edit crontab:
 
 ```bash
 crontab -e
 ```
 
-Add the following line (adjust paths as needed):
-
-To enable cron:
+2. To enable cron:
 
 ```bash
 sudo systemctl enable cron
 sudo systemctl start cron
 ```
 
+3. Add the following line (adjust paths as needed):
+
 ```cron
 */5 * * * * /usr/bin/python3 $HOME/Devops_CICD/check_commits.py >> $HOME/Devops_CICD/log/check_commits.log 2>&1
 ```
 
-Validate Cron:
+4. Validate Cron:
 
 ```bash
 crontab -l
@@ -146,20 +146,20 @@ sudo journalctl -u cron --since "1 hour ago"
 
 ## Askpass Script (Optional for Sudo Automation)
 
-Create an askpass script for secure sudo:
+1. Create an askpass script for secure sudo:
 
 ```bash
 nano ~/askpass.sh
 ```
 
-Add the following:
+2. Add the following:
 
 ```bash
 #!/bin/bash
 echo "your_sudo_password"
 ```
 
-Make it executable:
+3. Make it executable:
 
 ```bash
 chmod +x ~/askpass.sh
@@ -167,10 +167,10 @@ chmod +x ~/askpass.sh
 ---
 
 ## Validation Snapshots
-1. Repo Structure:<br>
+1. Project Repo directories and files:<br>
 <img width="499" alt="image" src="https://github.com/user-attachments/assets/0bd0fd5d-d139-4fa3-9081-39aff0f2f366" /><br>
 
-2. Github token setup:<br>
+2. Github token setup in .env file:<br>
 <img width="611" alt="image" src="https://github.com/user-attachments/assets/4649dfbf-faef-4c39-9ade-da32af9acea6" /><br>
 
 3. Nginx setup:<br>
@@ -178,6 +178,19 @@ chmod +x ~/askpass.sh
 
 4. Crontab setup:<br>
 <img width="851" alt="image" src="https://github.com/user-attachments/assets/b7392a59-fb64-4fdc-92c0-03cd1509b5d3" /><br>
+
+5. Log directory files:<br>
+<img width="562" alt="image" src="https://github.com/user-attachments/assets/6cfa5eb1-de86-443f-9855-8867a7976215" /><br>
+
+6. Latest Commit details storing in a file:<br>
+<img width="629" alt="image" src="https://github.com/user-attachments/assets/62b3080c-4b35-4627-ab08-e6fd0775cf13" /><br>
+
+7. Deployment logs storing in a file:<br>
+<img width="521" alt="image" src="https://github.com/user-attachments/assets/9693ef72-9d92-47f0-8691-e7f7f4b52fba" /><br>
+
+8. Checking commits to do the latest deployment on the server:<br>
+<img width="689" alt="image" src="https://github.com/user-attachments/assets/344119db-9bbb-4c35-baee-8d9b061572db" /><br>
+
 
 ---
 
