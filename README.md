@@ -1,10 +1,9 @@
 # DevOps CI/CD Pipeline
 
 This project demonstrates a simple **CI/CD pipeline** for automatically deploying changes from a GitHub repository using Python and shell scripting, with support for `nginx` as the web server.
-
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 CI-CD_Pipeline_Tool/
@@ -14,23 +13,20 @@ CI-CD_Pipeline_Tool/
 │-- .gitignore               # Git ignore file
 │-- index.html               # Sample index page
 │-- README.md                # Project documentation
-│-- requirements.txt         # Setup and usage instructions
 ```
-
 ---
 
-## 🚀 Features
+## Features
 
-- ✅ **Automated Commit Checking** with `check_commits.py`
-- ✅ **Automatic Deployment** with `deploy.sh`
-- ✅ **Cron Job Integration** to run scripts periodically
-- ✅ **Nginx Configuration** for serving a static `index.html` page
-- ✅ **Token-Based GitHub Authentication**
-- ✅ **Logging Support** to track execution
-
+- **Automated Commit Checking** with `check_commits.py`
+- **Automatic Deployment** with `deploy.sh`
+- **Cron Job Integration** to run scripts periodically
+- **Nginx Configuration** for serving a static `index.html` page
+- **Token-Based GitHub Authentication**
+- **Logging Support** to track execution
 ---
 
-## 🛠️ System Requirements
+## System Requirements
 
 Ensure the following are installed on your Ubuntu/Linux system:
 
@@ -39,10 +35,9 @@ sudo apt update
 sudo apt install -y nginx git python3 pipx
 pipx ensurepath
 ```
-
 ---
 
-## 📥 Project Setup
+## Project Setup
 
 1. Set up your SSH keys with GitHub.
 2. Clone the repository:
@@ -65,10 +60,9 @@ pipx ensurepath
    ```bash
    chmod 755 check_commits.py deploy.sh
    ```
-
 ---
 
-## 🔐 GitHub Token Setup
+## GitHub Token Setup
 
 ### On Ubuntu:
 1. Install `python3-dotenv`:
@@ -91,10 +85,9 @@ pipx ensurepath
    GITHUB_TOKEN="your_github_token"
    ```
 3. Ensure `.env` is listed in `.gitignore`.
-
 ---
 
-## 🔁 Cron Job Setup (Every 5 Minutes)
+## Cron Job Setup (Every 5 Minutes)
 
 Edit crontab:
 
@@ -122,12 +115,9 @@ crontab -l
 systemctl status cron
 sudo journalctl -u cron --since "1 hour ago"
 ```
-
-
-
 ---
 
-## 🌐 Nginx Setup
+## Nginx Setup
 
 1. Update Nginx configuration:
 
@@ -152,10 +142,9 @@ sudo systemctl restart nginx
 ```bash
 echo "$(whoami) ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx" | sudo tee /etc/sudoers.d/nginx_restart
 ```
-
 ---
 
-## 🔒 Askpass Script (Optional for Sudo Automation)
+## Askpass Script (Optional for Sudo Automation)
 
 Create an askpass script for secure sudo:
 
@@ -175,7 +164,6 @@ Make it executable:
 ```bash
 chmod +x ~/askpass.sh
 ```
-
 ---
 
 ## ✅ Validation
@@ -184,7 +172,6 @@ chmod +x ~/askpass.sh
 - **Check Git version**: `git --version`
 - **Check Nginx**: `sudo systemctl status nginx`
 - **Check Cron**: `sudo systemctl status cron`
-
 ---
 
 ## 📄 License
