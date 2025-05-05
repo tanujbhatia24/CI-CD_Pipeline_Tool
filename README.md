@@ -10,6 +10,10 @@ CI-CD_Pipeline_Tool/
 │-- deploy_sample/
 │   ├── check_commits.py     # Script to check for new commits
 │   ├── deploy.sh            # Deployment script
+│-- log_sample/
+│   ├── check_commits.log    # script to check commits
+│   ├── deploy.log           # script to do the deployment on to the server
+│   ├── latest_commit.txt    # text file to store latest commit id
 │-- .gitignore               # Git ignore file
 │-- index.html               # Sample index page
 │-- README.md                # Project documentation
