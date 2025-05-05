@@ -87,36 +87,6 @@ pipx ensurepath
 3. Ensure `.env` is listed in `.gitignore`.
 ---
 
-## Cron Job Setup (Every 5 Minutes)
-
-Edit crontab:
-
-```bash
-crontab -e
-```
-
-Add the following line (adjust paths as needed):
-
-To enable cron:
-
-```bash
-sudo systemctl enable cron
-sudo systemctl start cron
-```
-
-```cron
-*/5 * * * * /usr/bin/python3 $HOME/Devops_CICD/check_commits.py >> $HOME/Devops_CICD/log/check_commits.log 2>&1
-```
-
-### Validate Cron:
-
-```bash
-crontab -l
-systemctl status cron
-sudo journalctl -u cron --since "1 hour ago"
-```
----
-
 ## Nginx Setup
 
 1. Update Nginx configuration:
@@ -144,6 +114,36 @@ echo "$(whoami) ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx" | sudo tee /et
 ```
 ---
 
+## Cron Job Setup (Every 5 Minutes)
+
+Edit crontab:
+
+```bash
+crontab -e
+```
+
+Add the following line (adjust paths as needed):
+
+To enable cron:
+
+```bash
+sudo systemctl enable cron
+sudo systemctl start cron
+```
+
+```cron
+*/5 * * * * /usr/bin/python3 $HOME/Devops_CICD/check_commits.py >> $HOME/Devops_CICD/log/check_commits.log 2>&1
+```
+
+Validate Cron:
+
+```bash
+crontab -l
+systemctl status cron
+sudo journalctl -u cron --since "1 hour ago"
+```
+---
+
 ## Askpass Script (Optional for Sudo Automation)
 
 Create an askpass script for secure sudo:
@@ -166,12 +166,19 @@ chmod +x ~/askpass.sh
 ```
 ---
 
-## ✅ Validation
+## Validation Snapshots
+1. Repo Structure:<br>
+<img width="499" alt="image" src="https://github.com/user-attachments/assets/0bd0fd5d-d139-4fa3-9081-39aff0f2f366" /><br>
 
-- **Check Python version**: `python3 --version`
-- **Check Git version**: `git --version`
-- **Check Nginx**: `sudo systemctl status nginx`
-- **Check Cron**: `sudo systemctl status cron`
+2. Github token setup:<br>
+<img width="611" alt="image" src="https://github.com/user-attachments/assets/4649dfbf-faef-4c39-9ade-da32af9acea6" /><br>
+
+3. Nginx setup:<br>
+<img width="806" alt="image" src="https://github.com/user-attachments/assets/80215aa9-319f-44eb-9fd8-700f496b3a04" /><br>
+
+4. Crontab setup:<br>
+<img width="851" alt="image" src="https://github.com/user-attachments/assets/b7392a59-fb64-4fdc-92c0-03cd1509b5d3" /><br>
+
 ---
 
 ## 📄 License
