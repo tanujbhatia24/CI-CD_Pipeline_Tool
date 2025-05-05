@@ -38,4 +38,5 @@ if ! sudo -A systemctl restart nginx; then
     exit 1
 fi
 
+log_message "Nginx restarted successfully!"
 log_message "Deployment completed successfully!"
