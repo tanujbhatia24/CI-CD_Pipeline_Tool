@@ -3,7 +3,7 @@
 # Get the current user's home directory
 USER_HOME=$(eval echo ~$(whoami))
 PROJECT_DIR="$USER_HOME/Devops_CICD"
-REPO_DIR="$PROJECT_DIR/Devops_pipeline"
+REPO_DIR="$PROJECT_DIR/CI-CD_Pipeline_Tool"
 LOG_FILE="$PROJECT_DIR/log/deploy.log"
 ASKPASS_SCRIPT="$USER_HOME/askpass.sh"
 
@@ -25,7 +25,7 @@ if [ -d "$REPO_DIR/.git" ]; then
         exit 1
     fi
 else
-    if ! git clone https://github.com/minnathdhani/Devops_pipeline.git "$REPO_DIR"; then
+    if ! git clone https://github.com/tanujbhatia24/CI-CD_Pipeline_Tool.git "$REPO_DIR"; then
         log_message "Git clone failed!"
         exit 1
     fi
