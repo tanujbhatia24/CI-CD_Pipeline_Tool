@@ -36,7 +36,7 @@ Ensure the following are installed on your Ubuntu/Linux system:
 
 ```bash
 sudo apt update
-sudo apt install -y nginx git python3 pipx python3-dotenv
+sudo apt install -y nginx git python3 pipx
 pipx ensurepath
 ```
 
@@ -75,17 +75,18 @@ pipx ensurepath
    ```bash
    sudo apt install -y python3-dotenv
    ```
-2. Add your GitHub token directly to `check_commits.py`:
+2. Create a `.env` file and add your GitHub token:
    ```python
    GITHUB_TOKEN = "your_github_token"
    ```
+3. Ensure `.env` is listed in `.gitignore`.
 
 ### On Windows:
 1. Install dotenv:
    ```bash
    pip install python-dotenv
    ```
-2. Create a `.env` file:
+2. Create a `.env` file and add your GitHub token:
    ```
    GITHUB_TOKEN="your_github_token"
    ```
@@ -93,7 +94,7 @@ pipx ensurepath
 
 ---
 
-## 🔁 Cron Job Setup (Every Minute)
+## 🔁 Cron Job Setup (Every 5 Minutes)
 
 Edit crontab:
 
@@ -103,8 +104,15 @@ crontab -e
 
 Add the following line (adjust paths as needed):
 
+To enable cron:
+
+```bash
+sudo systemctl enable cron
+sudo systemctl start cron
+```
+
 ```cron
-* * * * * /usr/bin/python3 $HOME/Devops_CICD/CI-CD_Pipeline_Tool/check_commits.py >> $HOME/Devops_CICD/CI-CD_Pipeline_Tool/log/check_commits.log 2>&1
+*/5 * * * * /usr/bin/python3 $HOME/Devops_CICD/check_commits.py >> $HOME/Devops_CICD/log/check_commits.log 2>&1
 ```
 
 ### Validate Cron:
@@ -115,12 +123,7 @@ systemctl status cron
 sudo journalctl -u cron --since "1 hour ago"
 ```
 
-To enable cron:
 
-```bash
-sudo systemctl start cron
-sudo systemctl enable cron
-```
 
 ---
 
@@ -184,18 +187,6 @@ chmod +x ~/askpass.sh
 
 ---
 
-## 👥 Contributors
-
-- Tanuj  
-- Minnath  
-- Shraddha  
-- Harjeet  
-- Jasmine  
-- Aniruddha  
-- Ankit  
-
----
-
 ## 📄 License
 
-This project is for educational/demo purposes. Use and modify freely.
+This project is intended for educational and demonstration purposes. You are welcome to use and adapt it as a reference; however, please ensure that your work represents your own understanding and is not reproduced verbatim.
