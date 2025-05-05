@@ -1,11 +1,11 @@
-# DevOps Pipeline
+# CI-CD_Pipeline_Tool
 
-This project contains a **CICD pipeline** setup for automating deployments.
+This project contains a **CI-CD pipeline** setup for automating deployments.
 
 ## Project Structure
 
 ```
-Devops_pipeline/
+CI-CD_Pipeline_Tool/
 │-- deploy_sample/
 │   ├── check_commits.py   # Script to check for new commits
 │   ├── deploy.sh          # Deployment script
@@ -29,13 +29,4 @@ sudo systemctl restart nginx
 For GitHub authentication issues, ensure your **GITHUB_TOKEN** is correctly set.
 
 ---
-
-## Key Contributor
-1. Tanuj
-2. Minnath
-3. Shraddha
-4. Harjeet
-5. Jasmine
-6. Aniruddha
-7. Ankit
 
