@@ -182,13 +182,13 @@ chmod +x ~/askpass.sh
 5. Log directory files:<br>
 <img width="562" alt="image" src="https://github.com/user-attachments/assets/6cfa5eb1-de86-443f-9855-8867a7976215" /><br>
 
-6. Latest Commit details storing in a file:<br>
+6. Latest Commit details storing in a file (latest_commit.txt):<br>
 <img width="629" alt="image" src="https://github.com/user-attachments/assets/62b3080c-4b35-4627-ab08-e6fd0775cf13" /><br>
 
-7. Deployment logs storing in a file:<br>
+7. Deployment logs storing in a file (deploy.log):<br>
 <img width="521" alt="image" src="https://github.com/user-attachments/assets/9693ef72-9d92-47f0-8691-e7f7f4b52fba" /><br>
 
-8. Checking commits to do the latest deployment on the server:<br>
+8. Checking commits to do the latest deployment on the server (checking_commits.log):<br>
 <img width="682" alt="image" src="https://github.com/user-attachments/assets/085e0134-67ec-4c55-8c41-49d2a9d398c6" /><br>
 ![image](https://github.com/user-attachments/assets/c65388cb-a74d-4026-bb16-5f2bd78e42c7)<br>
 ---
